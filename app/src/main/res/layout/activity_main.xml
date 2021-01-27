@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    tools:context=".activities.MainActivity">
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/colorBackground">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/newsApp_textView"
+            android:layout_width="230dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground"
+            android:fontFamily="sans-serif-medium"
+            android:padding="9dp"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/colorTextHighlight"
+            android:textSize="30sp"
+            app:layout_column="1"
+            app:layout_row="0">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/home_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground"
+            android:drawableRight="@drawable/ic_categories"
+            android:drawableTint="@color/colorText"
+            android:onClick="buttonClick"
+            android:paddingRight="35dp"
+            app:layout_column="0"
+            app:layout_gravity="center_vertical"
+            app:layout_row="0">
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        >
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="330dp"
+            android:padding="10dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="@color/secondaryVariant"
+            android:textColor="@color/colorText"
+            android:id="@+id/searchInput"
+            android:inputType="text"
+            android:fontFamily="sans-serif-light"
+            android:hint="@string/search"
+            android:textColorHint="@color/colorText"
+            android:ems="10">
+
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            app:layout_gravity="center"
+            android:background="@drawable/background"
+            android:drawableTint="@color/colorText"
+            android:src="@drawable/ic_baseline_search_24"
+        >
+
+        </ImageButton>
+    </androidx.gridlayout.widget.GridLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:background="@color/secondaryVariant"
+        android:backgroundTint="@color/secondaryVariant"
+        app:contentPaddingTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="5dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/categoriesLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@color/secondaryVariant"
+            android:orientation="vertical"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/category_Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="sans-serif-medium"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/newsCategories"
+                android:textAllCaps="true"
+                android:textColor="@color/colorText"
+                android:textSize="25sp" />
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_top_news"
+                    app:layout_column="0"
+                    app:layout_gravity="center_vertical"
+                    app:layout_row="0" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="273dp"
+                    android:layout_height="wrap_content"
+                    android:padding="11dp"
+                    android:text="@string/topStories"
+                    android:textColor="@color/colorTextHighlight"
+                    android:textSize="23sp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/top_news_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/button_background"
+                    android:drawableTint="@color/colorText"
+                    android:src="@drawable/ic_next"
+                    android:onClick="topNewsButton"
+                    app:layout_gravity="center" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_politics"
+                    app:layout_column="0"
+                    app:layout_gravity="center_vertical"
+                    app:layout_row="0" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="273dp"
+                    android:layout_height="wrap_content"
+                    android:padding="11dp"
+                    android:text="@string/politics"
+                    android:textColor="@color/colorTextHighlight"
+                    android:textSize="23sp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/add_button2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/button_background"
+                    android:drawableTint="@color/colorText"
+                    android:src="@drawable/ic_next"
+                    android:onClick="politicsButton"
+                    app:layout_gravity="center" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_sports"
+                    app:layout_column="0"
+                    app:layout_gravity="center_vertical"
+                    app:layout_row="0" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="273dp"
+                    android:padding="11dp"
+                    android:text="@string/sports"
+                    android:textColor="@color/colorTextHighlight"
+                    android:textSize="23sp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/add_button3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/button_background"
+                    android:drawableTint="@color/colorText"
+                    android:src="@drawable/ic_next"
+                    android:onClick="sportsButton"
+                    app:layout_gravity="center" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_finance"
+                    app:layout_column="0"
+                    app:layout_gravity="center_vertical"
+                    app:layout_row="0" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="273dp"
+                    android:layout_height="wrap_content"
+                    android:padding="11dp"
+                    android:text="@string/finance"
+                    android:textColor="@color/colorTextHighlight"
+                    android:textSize="23sp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/add_button4"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/button_background"
+                    android:drawableTint="@color/colorText"
+                    android:onClick="financeButton"
+                    android:src="@drawable/ic_next"
+                    app:layout_gravity="center" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_celebrity"
+                    app:layout_column="0"
+                    app:layout_gravity="center_vertical"
+                    app:layout_row="0" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="273dp"
+                    android:layout_height="wrap_content"
+                    android:padding="11dp"
+                    android:text="@string/celebrity"
+                    android:textColor="@color/colorTextHighlight"
+                    android:textSize="23sp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/add_button5"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/button_background"
+                    android:drawableTint="@color/colorText"
+                    android:onClick="celebButton"
+                    android:src="@drawable/ic_next"
+                    app:layout_gravity="center" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_tv"
+                    app:layout_column="0"
+                    app:layout_gravity="center_vertical"
+                    app:layout_row="0" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="273dp"
+                    android:layout_height="wrap_content"
+                    android:padding="13dp"
+                    android:text="@string/entertainment"
+                    android:textColor="@color/colorTextHighlight"
+                    android:textSize="23sp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/add_button6"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/button_background"
+                    android:drawableTint="@color/colorText"
+                    android:onClick="TvButton"
+                    android:src="@drawable/ic_next"
+                    app:layout_gravity="center" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_technology"
+                    app:layout_column="0"
+                    app:layout_gravity="center_vertical"
+                    app:layout_row="0" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="273dp"
+                    android:layout_height="wrap_content"
+                    android:padding="11dp"
+                    android:text="@string/technology"
+                    android:textColor="@color/colorTextHighlight"
+                    android:textSize="23sp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/add_button7"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/button_background"
+                    android:drawableTint="@color/colorText"
+                    android:onClick="techButton"
+                    android:src="@drawable/ic_next"
+                    app:layout_gravity="center" />
+            </androidx.gridlayout.widget.GridLayout>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_uk"
+                    app:layout_column="0"
+                    app:layout_gravity="center_vertical"
+                    app:layout_row="0" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="273dp"
+                    android:layout_height="wrap_content"
+                    android:padding="13dp"
+                    android:text="@string/ukNews"
+                    android:textColor="@color/colorTextHighlight"
+                    android:textSize="23sp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/add_button8"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/button_background"
+                    android:drawableTint="@color/colorText"
+                    android:onClick="ukButton"
+                    android:src="@drawable/ic_next"
+                    app:layout_gravity="center" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_us"
+                    app:layout_column="0"
+                    app:layout_gravity="center_vertical"
+                    app:layout_row="0" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="273dp"
+                    android:layout_height="wrap_content"
+                    android:padding="11dp"
+                    android:text="@string/usNews"
+                    android:textColor="@color/colorTextHighlight"
+                    android:textSize="23sp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/add_button9"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/button_background"
+                    android:drawableTint="@color/colorText"
+                    android:src="@drawable/ic_next"
+                    android:onClick="usButton"
+                    app:layout_gravity="center" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_international"
+                    app:layout_column="0"
+                    app:layout_gravity="center_vertical"
+                    app:layout_row="0" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="273dp"
+                    android:layout_height="wrap_content"
+                    android:padding="11dp"
+                    android:text="@string/worldNews"
+                    android:textColor="@color/colorTextHighlight"
+                    android:textSize="23sp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/add_button10"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/button_background"
+                    android:drawableTint="@color/colorText"
+                    android:src="@drawable/ic_next"
+                    android:onClick="worldButton"
+                    app:layout_gravity="center" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

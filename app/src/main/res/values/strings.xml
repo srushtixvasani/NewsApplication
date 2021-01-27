@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <!-- main_activity.xml strings -->
+
+    <string name="search">Search News</string>
+    <string name="refresh">Refresh</string>
+
+    <!--categories.xml strings -->
+    <string name="newsCategories">NEWS CATEGORIES</string>
+    <string name="topStories">Top Stories</string>
+    <string name="sports">Sport</string>
+    <string name="politics">Politics</string>
+    <string name="technology">Technology</string>
+    <string name="celebrity">Celebrity</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="finance">Finance</string>
+    <string name="ukNews">UK News</string>
+    <string name="usNews">US News</string>
+    <string name="worldNews">World News</string>
+</resources>
